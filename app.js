@@ -30,6 +30,10 @@ try {
     app.get('/', (req, res) => {
         res.send("Hello World");
     });
+      app.get('/users', (req, res) => {
+        res.send("here is users");
+    });
+
 
     app.get('/data', (req, res) => {
         res.json(users);
