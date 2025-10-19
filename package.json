@@ -4,7 +4,6 @@
   "description": "this is just basic api app",
   "main": "app.js",
   "type": "module",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -12,11 +11,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Adnanahmed456/aj3.git"
-
   },
   "author": "adnan",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0"
   }
 }

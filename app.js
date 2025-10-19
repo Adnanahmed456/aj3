@@ -1,5 +1,5 @@
 import express from 'express';
-
+import rateLimit from 'express-rate-limit';
 const app = express();
 app.use(express.json());
 
@@ -35,6 +35,13 @@ try {
     });
 
 
+
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 5,               // max 5 requests per IP per minute
+  message: { error: "Too many requests, please try again later." }
+});
+    app.use(limiter)
     app.get('/data', (req, res) => {
         res.json(users);
     });
