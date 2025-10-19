@@ -1,4 +1,5 @@
-import express from 'express'
+import express from 'express';
+
 const app = express();
 app.use(express.json());
 
@@ -24,16 +25,19 @@ const users = [
   { id: 19, username: "user19", email: "user19@example.com", role: "student", registeredAt: "2023-03-02" },
   { id: 20, username: "user20", email: "user20@example.com", role: "admin", registeredAt: "2023-03-05" }
 ];
+
 try {
- app.get('/', (req, res) => {
-    res.send("hellow world")
-})
-app.get('/data', (req, res) => {
-    res.send(users)
-})
+    app.get('/', (req, res) => {
+        res.send("Hello World");
+    });
 
-app.listen(3000, () => console.log("server is running on http://localhost:3000"));   
+    app.get('/data', (req, res) => {
+        res.json(users);
+    });
+
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 } catch (error) {
-    console.log(error,"somthing is wrong with route")
+    console.error(error, "Something went wrong with the route");
 }
-
