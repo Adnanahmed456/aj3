@@ -1,8 +1,10 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
+
+import cors from 'cors'
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 const users = [
   { id: 1, username: "user1", email: "user1@example.com", role: "student", registeredAt: "2023-01-10" },
   { id: 2, username: "user2", email: "user2@example.com", role: "teacher", registeredAt: "2023-01-12" },
