@@ -1,0 +1,6 @@
+node_modules/
+.env
+../aj1.json
+../file.txt
+../test.txt
+../upload/
